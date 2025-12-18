@@ -1,0 +1,39 @@
+/* Featured Scooter Cards */
+.featured-scooters {
+  text-align: center;
+  padding: 2rem 5%;
+  max-width: 1200px;
+  margin: 0 auto 2rem auto;
+}
+
+.featured-scooters h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.scooter-cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.card {
+  background-color: var(--white);
+  border-radius: 15px;
+  padding: 1rem;
+  width: 300px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: 0.3s;
+  text-align: center;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}

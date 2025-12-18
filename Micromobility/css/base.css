@@ -1,0 +1,22 @@
+/* Reset and common styles */
+:root {
+  --green-dark: #0b2e23;     /* Dark bottle green */
+  --green-mid:  #145c40;     /* Medium bottle green */
+  --green-light:#3a7d56;     /* Lighter bottle green */
+  --white:     #ffffff;
+  --gray-light:#e0e0e0;      /* Slightly lighter than before */
+  --font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font);
+}
+
+body {
+  background-color: var(--gray-light);
+  color: var(--green-dark);
+}

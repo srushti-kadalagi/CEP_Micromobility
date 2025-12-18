@@ -1,0 +1,151 @@
+.booking-container {
+  min-height: 85vh;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(135deg, #0f3d2e, #1e6f5c);
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.bg-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  /* Sakura gradient overlay */
+  background-blend-mode: overlay;
+  background-color: rgba(255, 182, 193, 0.35); /* soft pink */
+  filter: blur(6px) brightness(0.7);
+  transition: all 0.8s ease;
+  z-index: -1;
+  opacity: 0;
+}
+
+.bg-overlay.visible {
+  opacity: 1;
+}
+
+
+.city-selection h2,
+.station-attractions h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+}
+
+.city-cards {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.city-card {
+  background-color: #123c32;
+  border-radius: 16px;
+  width: 180px;
+  cursor: pointer;
+  text-align: center;
+  padding: 0.5rem;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.city-card img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 0.5rem;
+  transition: transform 0.4s ease;
+}
+
+.city-card:hover img {
+  transform: scale(1.05);
+}
+
+.city-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+.station-attractions {
+  width: 100%;
+  max-width: 800px;
+  margin-top: 2rem;
+  z-index: 1;
+  position: relative;
+}
+
+.station-attractions label {
+  display: block;
+  margin-top: 1rem;
+  margin-bottom: 0.3rem;
+}
+
+.station-attractions select,
+.station-attractions input {
+  width: 100%;
+  padding: 0.6rem;
+  border-radius: 8px;
+  border: none;
+  margin-bottom: 1rem;
+}
+
+.attractions-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  margin-top: 1rem;
+}
+
+.attraction-card {
+  background-color: #0f3d2e;
+  padding: 1rem;
+  border-radius: 12px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.attraction-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+}
+
+.attraction-card h4 {
+  margin-bottom: 0.5rem;
+}
+
+.attraction-card p {
+  margin-bottom: 0.5rem;
+}
+
+.attraction-card .price-badge {
+  background-color: #1e6f5c;
+  color: #fff;
+  padding: 0.3rem 0.6rem;
+  border-radius: 8px;
+  display: inline-block;
+  margin-bottom: 0.5rem;
+}
+
+.attraction-card button {
+  background-color: #9ed2be;
+  border: none;
+  border-radius: 8px;
+  padding: 0.5rem;
+  width: 48%;
+  margin-right: 2%;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.attraction-card button:last-child {
+  margin-right: 0;
+}
+
+.hidden {
+  display: none;
+}

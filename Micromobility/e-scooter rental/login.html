@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - E-Scooter Rental</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/auth.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">
+      <img src="../assets/logos/logo.png" alt="E-Scooter Logo" style="height:50px;">
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="register.html">Sign Up</a></li>
+    </ul>
+  </nav>
+
+  <!-- Login Section -->
+  <section class="auth-section">
+    <div class="auth-card">
+      <h2>Login</h2>
+
+      <form id="loginForm">
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="example@mail.com" required>
+
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="********" required>
+
+        <button type="submit" class="cta-btn">Login</button>
+      </form>
+
+      <p>
+        Don’t have an account?
+        <a href="register.html">Create one</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- JS -->
+  <script src="../js/auth.js"></script>
+
+</body>
+</html>

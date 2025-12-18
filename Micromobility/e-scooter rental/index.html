@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-Scooter Rental</title>
+  
+  <!-- CSS files -->
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/scooters.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="logo">
+      <img src="../assets/logos/logo.png" alt="E-Scooter Logo" class="logo-img">
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="scooters.html">Scooters</a></li>
+      <li><a href="booking.html">Booking</a></li>
+      <li><a href="dashboard.html">Dashboard</a></li>
+      <li><a href="feedback.html">Feedback</a></li>
+      <li><a href="login.html" class="login-btn">Login</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Ride Green, Ride Smart</h1>
+      <p>Explore the city effortlessly with our eco-friendly E-Scooter. Book your ride in seconds!</p>
+      <a href="#" class="cta-btn" id="rentBtn">Rent Now</a>
+    </div>
+    <div class="hero-image">
+      <img src="../assets/images/scooters/scooter.jpg" alt="E-Scooter">
+    </div>
+  </section>
+
+  <!-- Featured Scooter -->
+  <section class="featured-scooters">
+    <h2>Our Scooter</h2>
+    <div class="scooter-cards">
+      <div class="card">
+        <img src="../assets/images/scooters/scooter.jpg" alt="Scooter">
+        <h3>Scooter Model A</h3>
+        <p>Battery: 50km | Speed: 25km/h | ¥800/hour</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 E-Scooter Rental. All rights reserved.</p>
+  </footer>
+
+  <!-- JS files -->
+  <script src="../js/auth.js"></script>
+  <script>
+    // Handle Rent Now button
+    document.addEventListener("DOMContentLoaded", () => {
+      const rentBtn = document.getElementById("rentBtn");
+      rentBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        // Check login status from auth.js
+        if (localStorage.getItem("userLoggedIn") === "true") {
+          window.location.href = "booking.html";
+        } else {
+          window.location.href = "login.html";
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>

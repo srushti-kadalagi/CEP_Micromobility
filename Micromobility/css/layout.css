@@ -1,0 +1,98 @@
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--green-dark);
+  padding: 1rem 2rem;
+}
+
+.navbar .logo img {
+  height: 50px;
+}
+
+.navbar .nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.navbar .nav-links li a {
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.navbar .login-btn {
+  padding: 0.4rem 0.8rem;
+  background-color: var(--green-mid);
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.navbar .login-btn:hover {
+  background-color: var(--green-light);
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3rem 5%;
+  background-color: var(--green-light);
+  border-radius: 15px;
+  margin: 2rem auto;
+  max-width: 1200px;
+}
+
+.hero-content {
+  flex: 1;
+  min-width: 280px;
+}
+
+.hero-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.cta-btn {
+  text-decoration: none;
+  padding: 0.8rem 1.5rem;
+  background-color: var(--green-mid);
+  color: var(--white);
+  border-radius: 10px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.cta-btn:hover {
+  background-color: var(--green-dark);
+}
+
+.hero-image {
+  flex: 1;
+  min-width: 280px;
+  text-align: center;
+}
+
+.hero-image img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 15px;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1rem 0;
+  background-color: var(--green-dark);
+  color: var(--white);
+  margin-top: 2rem;
+}

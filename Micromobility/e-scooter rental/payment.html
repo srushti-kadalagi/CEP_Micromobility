@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Payment | E-Scooter Rental</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/payment.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">
+      <img src="../assets/logos/logo.png" class="logo-img" alt="Logo">
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="dashboard.html">Dashboard</a></li>
+      <li><a href="booking.html">Booking</a></li>
+      <li><a href="feedback.html">Feedback</a></li>
+    </ul>
+  </nav>
+
+  <!-- Payment Container -->
+  <section class="payment-container">
+
+    <!-- Current Booking Details -->
+    <div class="booking-card" id="currentBooking">
+      <h2>Current Booking</h2>
+      <p>City: --</p>
+      <p>Station: --</p>
+      <p>Attraction: --</p>
+      <p>Distance: -- km</p>
+      <p>Price: ¥--</p>
+    </div>
+
+    <!-- Payment Options -->
+    <div class="payment-options">
+      <h2>Select Payment Method</h2>
+      <select id="paymentMethod">
+        <option value="card">Credit / Debit Card</option>
+        <option value="upi">UPI</option>
+        <option value="wallet">Wallet</option>
+      </select>
+      <button class="pay-btn" id="payBtn">Pay Now</button>
+    </div>
+
+  </section>
+
+  <!-- JS -->
+  <script>
+  const bookingData = JSON.parse(localStorage.getItem("currentBooking"));
+  const currentBooking = document.getElementById("currentBooking");
+
+  if (!bookingData) {
+    alert("No active booking found");
+    window.location.href = "booking.html";
+  }
+
+  currentBooking.innerHTML = `
+    <h2>Current Booking</h2>
+    <p>City: ${bookingData.city}</p>
+    <p>Station: ${bookingData.station}</p>
+    <p>Attraction: ${bookingData.attraction}</p>
+    <p>Distance: ${bookingData.distance} km</p>
+    <p>Price: ¥${bookingData.price}</p>
+  `;
+
+  document.getElementById("payBtn").addEventListener("click", () => {
+    const method = document.getElementById("paymentMethod").value;
+
+    // ✅ REQUIRED FLAGS FOR INVOICE PAGE
+    localStorage.setItem("paymentDone", "true");
+    localStorage.setItem("paymentMethod", method);
+
+    alert(`Payment of ¥${bookingData.price} successful via ${method}`);
+    window.location.href = "invoice.html";
+  });
+</script>
+
+
+</body>
+</html>

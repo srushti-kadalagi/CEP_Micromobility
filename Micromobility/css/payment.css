@@ -1,0 +1,61 @@
+.payment-container {
+  min-height: 85vh;
+  padding: 2rem;
+  background: linear-gradient(135deg, #4da88c, #9ed2be); /* lighter green gradient */
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.booking-card {
+  background-color: #1e6f5c; /* slightly darker green for contrast */
+  padding: 1.5rem;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 600px; /* constrain width */
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* subtle shadow */
+  text-align: left;
+}
+
+.booking-card p {
+  margin: 0.5rem 0;
+}
+
+.payment-options {
+  background-color: #2ca87b;
+  padding: 1.5rem;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 600px;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+
+.payment-options select, 
+.payment-options button {
+  padding: 0.6rem;
+  margin-top: 0.5rem;
+  border-radius: 8px;
+  border: none;
+  width: 100%;
+  font-weight: bold;
+}
+
+.pay-btn {
+  background-color: #9ed2be;
+  color: #0f3d2e;
+  padding: 0.8rem 1rem;
+  border-radius: 10px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  width: 50%;
+  margin-top: 1rem;
+  transition: 0.3s;
+}
+
+.pay-btn:hover {
+  background-color: #7bb99e;
+}

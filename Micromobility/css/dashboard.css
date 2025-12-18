@@ -1,0 +1,75 @@
+.dashboard-container {
+  min-height: 85vh;
+  padding: 2rem;
+  background: linear-gradient(135deg, #4da88c, #9ed2be);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dashboard-container h2,
+.dashboard-container h3 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.user-info, .bookings-section, .history-section, .ride-status {
+  width: 90%;
+  max-width: 900px;
+  margin-top: 1.5rem;
+  background-color: #1e6f5c;
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+}
+
+.booking-card, .status-card {
+  background-color: #3da88c;
+  padding: 1rem;
+  border-radius: 12px;
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+.booking-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  margin-top: 1rem;
+}
+
+.booking-history-card {
+  background-color: #2ca87b;
+  padding: 1rem;
+  border-radius: 12px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.booking-history-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+}
+
+.booking-history-card p {
+  margin: 0.3rem 0;
+}
+
+.hidden {
+  display: none;
+}
+
+.history-btn {
+  margin-top: 1rem;
+  padding: 0.6rem 1rem;
+  border: none;
+  border-radius: 8px;
+  background-color: #9ed2be;
+  color: #0f3d2e;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.history-btn:hover {
+  background-color: #7bb99e;
+}

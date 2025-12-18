@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard | E-Scooter Rental</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">
+      <img src="../assets/logos/logo.png" class="logo-img" alt="Logo">
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="booking.html">Book Ride</a></li>
+      <li><a href="payment.html">Payment</a></li>
+      <li><a href="#" id="logoutBtn">Logout</a></li>
+    </ul>
+  </nav>
+
+  <section class="dashboard-container">
+
+    <h2>Welcome, <span id="userName"></span>!</h2>
+
+    <!-- User Information -->
+    <div class="user-info">
+      <h3>Your Profile</h3>
+      <p><strong>Name:</strong> <span id="profileName"></span></p>
+      <p><strong>Email:</strong> <span id="profileEmail"></span></p>
+    </div>
+
+    <!-- Current Booking -->
+    <div class="bookings-section">
+      <h3>Current Booking</h3>
+      <div id="currentBooking" class="booking-card">
+        <!-- Current booking will appear here -->
+      </div>
+      <button id="showHistoryBtn" class="history-btn">Booking History</button>
+    </div>
+
+    <!-- Booking History -->
+    <div class="history-section hidden" id="historySection">
+      <h3>Booking History</h3>
+      <div id="bookingHistory" class="booking-grid"></div>
+    </div>
+
+    <!-- Ride Status -->
+    <div class="ride-status">
+      <h3>Ride Status</h3>
+      <div id="rideStatus" class="status-card">No ride in progress</div>
+    </div>
+
+  </section>
+
+  <!-- JS -->
+  <script src="../js/dashboard.js"></script>
+</body>
+</html>

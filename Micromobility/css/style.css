@@ -1,0 +1,161 @@
+:root {
+  --green-dark: #0f3d2e;
+  --green-mid:  #1e6f5c;
+  --green-light:#9ed2be;
+  --white:     #ffffff;
+  --gray-light:#f0f0f0;
+  --font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font);
+}
+
+body {
+  background-color: var(--gray-light);
+  color: var(--green-dark);
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--green-dark);
+  padding: 1rem 2rem;
+}
+
+.navbar .logo {
+  color: var(--white);
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.navbar .nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.navbar .nav-links li a {
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.navbar .login-btn {
+  padding: 0.4rem 0.8rem;
+  background-color: var(--green-mid);
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.navbar .login-btn:hover {
+  background-color: var(--green-light);
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3rem 5%;
+  background-color: var(--green-light);
+  border-radius: 15px;
+  margin: 2rem auto;
+  max-width: 1200px;
+}
+
+.hero-content {
+  flex: 1;
+  min-width: 280px;
+}
+
+.hero-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.cta-btn {
+  text-decoration: none;
+  padding: 0.8rem 1.5rem;
+  background-color: var(--green-mid);
+  color: var(--white);
+  border-radius: 10px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.cta-btn:hover {
+  background-color: var(--green-dark);
+}
+
+.hero-image {
+  flex: 1;
+  min-width: 280px;
+  text-align: center;
+}
+
+.hero-image img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 15px;
+}
+
+/* Featured Scooters */
+.featured-scooters {
+  text-align: center;
+  padding: 2rem 5%;
+  max-width: 1200px;
+  margin: 0 auto 2rem auto;
+}
+
+.featured-scooters h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.scooter-cards {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.card {
+  background-color: var(--white);
+  border-radius: 15px;
+  padding: 1rem;
+  width: 300px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: 0.3s;
+  text-align: center;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1rem 0;
+  background-color: var(--green-dark);
+  color: var(--white);
+  margin-top: 2rem;
+}

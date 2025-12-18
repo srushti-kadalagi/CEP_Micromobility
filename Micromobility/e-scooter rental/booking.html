@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Book a Ride | E-Scooter Rental</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/booking.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">
+      <img src="../assets/logos/logo.png" class="logo-img" alt="Logo">
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="dashboard.html">Dashboard</a></li>
+    </ul>
+  </nav>
+
+  <!-- Booking Container -->
+  <section class="booking-container">
+
+    <!-- City Selection -->
+    <div class="city-selection">
+      <h2>Select a City</h2>
+      <div class="city-cards">
+        <div class="city-card" data-city="Tokyo">
+          <img src="../assets/images/scooters/tokyo.jpg" alt="Tokyo">
+          <h3>Tokyo</h3>
+        </div>
+        <div class="city-card" data-city="Osaka">
+          <img src="../assets/images/scooters/osaka.jpg" alt="Osaka">
+          <h3>Osaka</h3>
+        </div>
+        <div class="city-card" data-city="Kyoto">
+          <img src="../assets/images/scooters/kyoto.jpg" alt="Kyoto">
+          <h3>Kyoto</h3>
+        </div>
+      </div>
+    </div>
+
+    <!-- Station + Attractions -->
+    <div class="station-attractions hidden">
+      <h2 id="cityTitle"></h2>
+
+      <label>Select Station</label>
+      <select id="stationSelect"></select>
+
+      <label>Search Attractions</label>
+      <input type="text" id="attractionSearch" placeholder="Search attractions...">
+
+      <div class="attractions-grid" id="attractionsGrid"></div>
+    </div>
+
+  </section>
+
+  <!-- Background Overlay -->
+  <div class="bg-overlay hidden"></div>
+
+  <!-- JS -->
+  <script src="../js/booking.js"></script>
+</body>
+</html>

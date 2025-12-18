@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Invoice | E-Scooter Rental</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/layout.css">
+
+  <style>
+    body {
+      background: #eef5f1;
+      font-family: Arial, sans-serif;
+    }
+
+    .page-wrapper {
+      max-width: 800px;
+      margin: 2.5rem auto;
+    }
+
+    .invoice-print {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 10px;
+    }
+
+    .invoice-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid #1e6f5c;
+      padding-bottom: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .invoice-header img {
+      width: 70px;
+    }
+
+    .invoice-header h1 {
+      color: #1e6f5c;
+      margin: 0;
+    }
+
+    .invoice-section {
+      margin-bottom: 1.2rem;
+    }
+
+    .invoice-section h3 {
+      color: #0f3d2e;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 0.3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .invoice-section p {
+      margin: 0.25rem 0;
+      font-size: 0.95rem;
+    }
+
+    .invoice-section span {
+      font-weight: bold;
+    }
+
+    .total {
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: #1e6f5c;
+      margin-top: 0.5rem;
+    }
+
+    .invoice-actions {
+      margin-top: 1.5rem;
+      display: flex;
+      gap: 1rem;
+    }
+
+    .invoice-actions button {
+      flex: 1;
+      padding: 0.7rem;
+      border-radius: 8px;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .download-btn {
+      background: #1e6f5c;
+      color: #fff;
+    }
+
+    .drop-btn {
+      background: #9ed2be;
+      color: #0f3d2e;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="page-wrapper">
+
+  <!-- ===== PRINTABLE AREA ONLY ===== -->
+  <div class="invoice-print" id="invoicePrintable">
+
+    <div class="invoice-header">
+      <img src="../assets/logos/logo.png" alt="Logo">
+      <div>
+        <h1>E-Scooter Ride Invoice</h1>
+        <p>Invoice ID: <strong id="invoiceId"></strong></p>
+      </div>
+    </div>
+
+    <!-- Ride Details -->
+    <div class="invoice-section">
+      <h3>Ride Details</h3>
+      <p><span>City:</span> <span id="city"></span></p>
+      <p><span>Station:</span> <span id="station"></span></p>
+      <p><span>Destination:</span> <span id="attraction"></span></p>
+      <p><span>Distance:</span> <span id="distance"></span> km</p>
+      <p><span>Date & Time:</span> <span id="date"></span></p>
+    </div>
+
+    <!-- Bike Details -->
+    <div class="invoice-section">
+      <h3>Bike Details</h3>
+      <p><span>Vehicle Type:</span> Foldable Electric Scooter</p>
+      <p><span>Model:</span> ES-Urban Pro</p>
+      <p><span>Battery Range:</span> 45 km</p>
+      <p><span>Max Speed:</span> 25 km/h</p>
+    </div>
+
+    <!-- Payment Details -->
+    <div class="invoice-section">
+      <h3>Payment Details</h3>
+      <p><span>Payment Method:</span> <span id="paymentMethod"></span></p>
+      <p class="total">Total Paid: ¥<span id="price"></span></p>
+      <p>Status: <strong>PAID</strong></p>
+    </div>
+
+  </div>
+
+  <!-- Buttons -->
+  <div class="invoice-actions">
+    <button class="download-btn" id="downloadInvoice">Download Invoice (PDF)</button>
+    <button class="drop-btn" onclick="goDrop()">Proceed to Drop Scooter</button>
+  </div>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+<script>
+  const booking = JSON.parse(localStorage.getItem("currentBooking"));
+  const paymentDone = localStorage.getItem("paymentDone");
+  const method = localStorage.getItem("paymentMethod");
+
+  if (!booking || paymentDone !== "true") {
+    alert("Payment incomplete");
+    window.location.href = "payment.html";
+  }
+
+  document.getElementById("invoiceId").textContent = "INV-" + Date.now();
+  document.getElementById("city").textContent = booking.city;
+  document.getElementById("station").textContent = booking.station;
+  document.getElementById("attraction").textContent = booking.attraction;
+  document.getElementById("distance").textContent = booking.distance;
+  document.getElementById("price").textContent = booking.price;
+  document.getElementById("paymentMethod").textContent = method;
+  document.getElementById("date").textContent = new Date().toLocaleString();
+
+  document.getElementById("downloadInvoice").addEventListener("click", () => {
+    html2pdf()
+      .set({
+        margin: 0.5,
+        filename: "E-Scooter-Invoice.pdf",
+        html2canvas: { scale: 2 },
+        jsPDF: { format: "a4", orientation: "portrait" }
+      })
+      .from(document.getElementById("invoicePrintable"))
+      .save();
+
+    const history = JSON.parse(localStorage.getItem("bookingHistory")) || [];
+    history.push(booking);
+    localStorage.setItem("bookingHistory", JSON.stringify(history));
+  });
+
+  function goDrop() {
+    window.location.href = "drop.html";
+  }
+</script>
+
+</body>
+</html>
